@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#111827">
+<meta name="theme-color" content="#f6f8f5">
 <meta name="description" content="Simple mobile-first UPI payment helper">
 <link rel="manifest" href="manifest.json"><link rel="stylesheet" href="style.css">
 <title>UPI Pay</title>
@@ -11,20 +11,20 @@
 <body>
 <main class="app-shell">
 <header class="topbar">
-  <div class="brand-wrap"><div class="brand-mark">₹</div><div><div class="brand">UPI Pay</div><div class="subtitle">Scan · Enter amount · Pay</div></div></div>
-  <button id="installBtn" class="icon-btn hidden" aria-label="Install app">＋</button>
+  <div class="brand-wrap"><div class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 7h14M5 12h14M5 17h14"/><path d="m15 4 4 3-4 3M9 14l-4 3 4 3"/></svg></div><div><div class="brand">UPI<span>PAY</span></div><div class="subtitle">Simple, secure payments</div></div></div>
+  <button id="installBtn" class="icon-btn hidden" aria-label="Install app"><svg viewBox="0 0 24 24"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 17v3h14v-3"/></svg></button>
 </header>
 
 <section id="home" class="screen active">
   <div class="hero-card">
-    <div class="hero-orb"><div class="qr-icon">▦</div></div>
-    <div class="eyebrow">UPI PAYMENT</div>
-    <h1>Scan & Pay</h1>
-    <p>Scan a merchant QR code or enter the UPI ID manually.</p>
-    <button id="scanBtn" class="primary-btn">▦ &nbsp; Scan QR Code</button>
-    <button id="manualBtn" class="secondary-btn">Enter UPI ID</button>
+    <div class="hero-orb"><div class="qr-icon"><svg viewBox="0 0 48 48"><path d="M5 5h14v14H5zM29 5h14v14H29zM5 29h14v14H5zM29 29h6v6h-6zM39 29h4v4h-4zM39 39h4v4h-4zM35 37h-6v6"/><path d="M10 10h4v4h-4zM34 10h4v4h-4zM10 34h4v4h-4z"/></svg></div></div>
+    <div class="eyebrow">PAY THE SIMPLE WAY</div>
+    <h1>Payments, made easy.</h1>
+    <p>Scan any UPI QR code or enter a UPI ID to get started.</p>
+    <button id="scanBtn" class="primary-btn"><svg viewBox="0 0 24 24"><path d="M4 8V5h3m10 0h3v3M20 16v3h-3M7 19H4v-3M8 8h3v3H8zm5 5h3v3h-3zM14 8h2m-8 8h1"/></svg> Scan QR code</button>
+    <button id="manualBtn" class="secondary-btn"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h9"/><circle cx="18" cy="17" r="3"/></svg> Enter UPI ID</button>
   </div>
-  <div class="feature-row"><span>⚡ No login</span><span>🔒 Local only</span><span>📱 PWA</span></div>
+  <div class="feature-row"><span><i class="feature-icon">✓</i> No login needed</span><span><i class="feature-icon">⌑</i> Private by design</span><span><i class="feature-icon">▣</i> Installable app</span></div>
 </section>
 
 <section id="manual" class="screen">
@@ -45,7 +45,7 @@
 
 <section id="details" class="screen">
   <div class="screen-head"><button class="back-btn" data-back="home">‹</button><div><h2>Payment details</h2><p>Check the recipient and amount.</p></div></div>
-  <div class="merchant-card"><div class="merchant-avatar">₹</div><div class="merchant-copy"><div id="merchantName" class="merchant-name">UPI Merchant</div><div id="upiId" class="muted"></div></div><span class="verified">✓</span></div>
+  <div class="merchant-card"><div class="merchant-avatar"><svg viewBox="0 0 24 24"><path d="M4 20v-1a8 8 0 0 1 16 0v1M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/></svg></div><div class="merchant-copy"><div id="merchantName" class="merchant-name">UPI Merchant</div><div id="upiId" class="muted"></div></div><span class="verified">✓</span></div>
   <label class="field-label" for="amount">Amount</label>
   <div class="amount-input"><span>₹</span><input id="amount" inputmode="decimal" type="number" min="0.01" step="0.01" placeholder="0.00"></div>
   <div id="amountHint" class="hint">Enter the amount you want to pay.</div>
@@ -76,7 +76,7 @@
   <button id="clearHistoryBtn" class="secondary-btn">Clear history</button>
 </section>
 
-<nav class="bottom-nav"><button data-nav="home" class="nav-item active">⌂<span>Pay</span></button><button data-nav="history" class="nav-item">◷<span>History</span></button></nav>
+<nav class="bottom-nav"><button data-nav="home" class="nav-item active"><svg viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg><span>Pay</span></button><button data-nav="history" class="nav-item"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 2.64-6.36L3 8"/><path d="M3 3v5h5m4-1v5l3 2"/></svg><span>History</span></button></nav>
 </main>
 <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.min.js"></script>
 <script src="app.js"></script>
